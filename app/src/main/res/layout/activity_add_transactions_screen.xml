@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:viewBindingIgnore="false"
+    tools:context=".screen.AddTransactionsScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--    close image-->
+        <ImageView
+            android:id="@+id/close_img_add_transactions_screen"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_close_icon_black"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/add_your_transaction"
+            android:textColor="@color/black"
+            android:textSize="21sp" />
+
+        <!--    transaction Amount-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/amount_add_transaction_TextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error_icon"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:hint="@string/amount">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount_add_transaction_TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--    transaction for what(optional)-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/for_what_add_transaction_TextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:hint="@string/reason_optional">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/spent_on_add_transaction_TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        for withdraw and add fund-->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_add_transaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/withdraw_add_transaction_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/spent"
+                style="@style/CustomChipStyle"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/add_fund_add_transaction_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_fund"
+                style="@style/CustomChipStyle"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="150dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/done_add_transaction_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/next_button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingTop="2dp"
+                android:text="@string/done"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    progressbar-->
+    <ProgressBar
+        android:id="@+id/progressBar_add_transactions"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:visibility="invisible"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/light_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
