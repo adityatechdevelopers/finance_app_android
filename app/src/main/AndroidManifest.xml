@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinanceManagementApp">
         <activity
+            android:name=".screen.NotVerifiedEmailScreen"
+            android:exported="false" />
+        <activity
+            android:name=".screen.VerifyEmailScreen"
+            android:exported="false" />
+        <activity
+            android:name=".screen.ForgotPasswordScreen"
+            android:exported="false" />
+        <activity
+            android:name=".screen.CreateAccountScreen"
+            android:exported="false" />
+        <activity
+            android:name=".screen.SignInEmail"
+            android:exported="false" />
+        <activity
             android:name=".screen.TransactionScreen"
             android:exported="false" />
         <activity

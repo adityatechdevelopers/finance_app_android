@@ -8,17 +8,6 @@
     tools:context=".screen.ProfileScreen">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="371dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_profile_sign_in_design_up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="248dp"
         android:layout_height="72dp"
@@ -28,10 +17,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_gravity="center"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         app:cardCornerRadius="100dp"
         app:cardElevation="50dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +55,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/name"
             android:textColor="@color/blue"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
 
         <!--        Name-->
         <TextView
@@ -76,7 +65,7 @@
             android:fontFamily="@font/fredoka_one"
             android:text="@string/name"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="19sp" />
 
         <!--        Email-->
         <TextView
@@ -86,7 +75,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/email_address"
             android:textColor="@color/blue"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
 
         <!--        Email-->
         <TextView
@@ -96,14 +85,14 @@
             android:fontFamily="@font/fredoka_one"
             android:text="@string/email_address"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="19sp" />
 
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/next_btn_profile_screen"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:clickable="true"
         android:elevation="20dp"
         android:focusable="true"
@@ -124,8 +113,8 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:src="@drawable/ic_next_arrow" />
 
         </LinearLayout>

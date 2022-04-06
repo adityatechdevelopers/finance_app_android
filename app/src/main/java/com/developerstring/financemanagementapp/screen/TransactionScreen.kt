@@ -45,6 +45,7 @@ class TransactionScreen : AppCompatActivity() {
         // set the layout and reverse items for recyclerView
         val layoutManager = LinearLayoutManager(this)
         layoutManager.reverseLayout = true
+        layoutManager.stackFromEnd = true
 
         // transaction RecyclerView
         binding.recyclerViewTransactionMain.layoutManager = layoutManager

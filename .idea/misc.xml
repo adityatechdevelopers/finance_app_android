@@ -8,28 +8,48 @@
         <entry key="app/src/main/res/drawable/amount_progressbar_background.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/bottom_main_activity_shape.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_account_screen_up_design.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/ic_add_round_icon.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/ic_arrow_back_icon.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_arrow_icon.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_bottom_main_activity.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_close_icon.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_close_icon_black.xml" value="0.1785" />
+        <entry key="app/src/main/res/drawable/ic_email.xml" value="0.219" />
+        <entry key="app/src/main/res/drawable/ic_email_error.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/ic_email_focused.xml" value="0.2145" />
         <entry key="app/src/main/res/drawable/ic_google.xml" value="0.1855" />
+        <entry key="app/src/main/res/drawable/ic_lock.xml" value="0.2145" />
+        <entry key="app/src/main/res/drawable/ic_lock_error.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/ic_lock_focused.xml" value="0.2145" />
         <entry key="app/src/main/res/drawable/ic_main_activity_design.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_main_screen_background.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_transactions_background.xml" value="0.219" />
         <entry key="app/src/main/res/drawable/main_activity_button_background.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/next_button_background.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/sign_in_card_view.xml" value="0.1855" />
+        <entry key="app/src/main/res/drawable/sign_in_edit_text.xml" value="0.2145" />
+        <entry key="app/src/main/res/drawable/sign_in_edit_text_email_error_icon.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/sign_in_edit_text_email_icon.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/sign_in_edit_text_error.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/sign_in_edit_text_icon.xml" value="0.2145" />
+        <entry key="app/src/main/res/drawable/sign_in_edit_text_password_error_icon.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/sign_in_edit_text_password_icon.xml" value="0.2145" />
         <entry key="app/src/main/res/layout/activity_account_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_transactions.xml" value="0.24094202898550723" />
         <entry key="app/src/main/res/layout/activity_add_transactions_screen.xml" value="0.24094202898550723" />
+        <entry key="app/src/main/res/layout/activity_create_account_screen.xml" value="0.22146739130434784" />
+        <entry key="app/src/main/res/layout/activity_forgot_password_screen.xml" value="0.264945652173913" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_monthly_expense.xml" value="0.24094202898550723" />
         <entry key="app/src/main/res/layout/activity_monthly_expense_screen.xml" value="0.24094202898550723" />
+        <entry key="app/src/main/res/layout/activity_not_verified_email_screen.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_profile_screen.xml" value="0.22803344726562502" />
+        <entry key="app/src/main/res/layout/activity_sign_in_email.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_sign_in_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_splash_screen2.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_transaction_screen.xml" value="0.26403985507246375" />
+        <entry key="app/src/main/res/layout/activity_verify_email_screen.xml" value="0.28708484670057655" />
         <entry key="app/src/main/res/layout/main_transaction_layout.xml" value="0.335" />
       </map>
     </option>

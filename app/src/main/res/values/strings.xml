@@ -5,7 +5,9 @@
     <string name="sign_in">Sign In</string>
     <string name="logout">Logout</string>
     <string name="to_continue">To Continue…</string>
+    <string name="continue_">Continue</string>
     <string name="sign_in_with_google">Sign In With Google</string>
+    <string name="sign_in_with_email">Sign In With Email</string>
     <string name="name">Name</string>
     <string name="email_address">Email Address</string>
     <string name="user_ID">User ID</string>
@@ -36,5 +38,30 @@
     <string name="not_specified">Not Specified</string>
     <string name="date">Date:</string>
     <string name="date_structure">DD-MM-YYYY</string>
+    <string name="hello_again">Hello Again!</string>
+    <string name="we_have_missed">Welcome back you\'ve been missed!</string>
+    <string name="email_id">Email ID</string>
+    <string name="password">Password</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="create_account">Create Account</string>
+    <string name="show_password">Show Password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="forgot_password_screen">Forgot \nPassword?</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="getting_started">Getting Started</string>
+    <string name="forgot_password_text">Don\'t worry! It happens. We will send a email to rest your password. Please enter email associated with your account.</string>
+    <string name="submit">Submit</string>
+    <string name="pass_con_pass_not_match">Password and Confirm Password are not matching*</string>
+    <string name="verify_email">Verify your \nAccount</string>
+    <string name="verify_email_text">To make sure it\'s your email address \nwe have sent verification link to \nemail</string>
+    <string name="user_email_address">user_email_address</string>
+    <string name="error_email_verify_text">Please click on the verification link sent to your \nemail address*</string>
+    <string name="not_got_the_mail">Didn\'t get the email?</string>
+    <string name="resend">Resend</string>
+    <string name="verify">Verify</string>
+    <string name="unverified_account">Unverified \nAccount</string>
+    <string name="unverified_account_warning">Unverified Account*</string>
+    <string name="not_verified_email_text">We will send a verification link to \nemail, to confirm it\'s your email address</string>
 
 </resources>

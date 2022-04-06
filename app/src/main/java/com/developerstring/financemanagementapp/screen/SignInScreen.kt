@@ -1,6 +1,5 @@
 package com.developerstring.financemanagementapp.screen
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -45,8 +44,16 @@ class SignInScreen : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
+        // onclick google sign in button
         binding.signInBtnSignInScreen.setOnClickListener {
             signIn()
+        }
+
+        // onclick email sign in button
+        binding.signInWithEmailBtnSignInScreen.setOnClickListener {
+            val emailSignInIntent = Intent(this@SignInScreen, SignInEmail::class.java)
+            startActivity(emailSignInIntent)
+            finish()
         }
 
     }

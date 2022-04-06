@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.developerstring.financemanagementapp.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
@@ -24,8 +25,7 @@ class SplashScreen : AppCompatActivity() {
         val user = mAuth.currentUser
 
         Handler().postDelayed({
-
-            if (user != null){
+            if (user != null) {
                 val mainActivityIntent = Intent(this@SplashScreen, MainActivity::class.java)
                 startActivity(mainActivityIntent)
                 finish()
@@ -34,7 +34,7 @@ class SplashScreen : AppCompatActivity() {
                 startActivity(signInScreenIntent)
                 finish()
             }
-        },3000)
+        }, 3000)
 
     }
 }

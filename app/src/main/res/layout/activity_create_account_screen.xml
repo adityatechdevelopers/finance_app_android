@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:viewBindingIgnore="false"
+    tools:context=".screen.CreateAccountScreen">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/getting_started"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+    <!--        email-->
+    <EditText
+        android:id="@+id/email_create_account_screen"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="30dp"
+        android:autofillHints="emailAddress"
+        android:background="@drawable/sign_in_edit_text"
+        android:drawableStart="@drawable/sign_in_edit_text_email_icon"
+        android:drawablePadding="10dp"
+        android:hint="@string/email_id"
+        android:inputType="textEmailAddress"
+        android:paddingStart="13dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/black" />
+
+    <!--        password-->
+    <EditText
+        android:id="@+id/password_create_account_screen"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:autofillHints="password"
+        android:background="@drawable/sign_in_edit_text"
+        android:drawableStart="@drawable/sign_in_edit_text_password_icon"
+        android:drawablePadding="10dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingStart="13dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/black" />
+
+<!--    confirm Password-->
+    <EditText
+        android:id="@+id/confirm_password_create_account_screen"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:autofillHints="password"
+        android:background="@drawable/sign_in_edit_text"
+        android:drawableStart="@drawable/sign_in_edit_text_password_icon"
+        android:drawablePadding="10dp"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        android:paddingStart="13dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/pass_confirm_pass_not_matching_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pass_con_pass_not_match"
+        android:textSize="11sp"
+        android:textColor="@color/red"
+        android:visibility="invisible"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="2dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--            show password checkbox-->
+        <CheckBox
+            android:id="@+id/show_password_checkbox_create_account_screen"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/black"
+            android:text="@string/show_password"
+            android:textColor="@color/black"
+            android:layout_marginStart="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:id="@+id/create_account_btn_email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/next_button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingTop="2dp"
+                android:text="@string/create_account"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!--    progressbar-->
+    <ProgressBar
+        android:id="@+id/progressBar_create_account_screen"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/light_blue"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_account"
+            android:textColor="@color/black"
+            android:layout_marginEnd="2.5dp"/>
+
+        <TextView
+            android:id="@+id/sign_in_create_account_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in"
+            android:textColor="@color/light_blue"
+            android:layout_marginStart="2.5dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
