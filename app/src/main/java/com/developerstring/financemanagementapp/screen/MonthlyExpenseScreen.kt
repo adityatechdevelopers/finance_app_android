@@ -3,8 +3,6 @@ package com.developerstring.financemanagementapp.screen
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.developerstring.financemanagementapp.R
-import com.developerstring.financemanagementapp.databinding.ActivityAccountScreenBinding
 import com.developerstring.financemanagementapp.databinding.ActivityMonthlyExpenseScreenBinding
 import com.developerstring.financemanagementapp.firebase.monthlyExpense.NewLimitData
 import com.google.firebase.auth.FirebaseAuth
@@ -46,10 +44,10 @@ class MonthlyExpenseScreen : AppCompatActivity() {
         binding.changeLimitMonthlyExpense.setOnClickListener {
 
             // get the new limit from the InputText
-            val newLimit = binding.newLimitMonthlyExpenseTextInputEditText.text.toString()
+            val newLimit : Int = binding.newLimitMonthlyExpenseTextInputEditText.text.toString().toInt()
 
             // store the new limit in the data class
-            val newLimitData = NewLimitData(newLimit)
+            val newLimitData : Int = NewLimitData(newLimit).toString().toInt()
 
             // set the data in Firebase Database
             database.child(userID.toString()).child("limit").setValue(newLimitData).addOnSuccessListener {

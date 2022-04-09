@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinanceManagementApp">
         <activity
+            android:name=".screen.TotalAmountScreen"
+            android:exported="false" />
+        <activity
             android:name=".screen.NotVerifiedEmailScreen"
             android:exported="false" />
         <activity

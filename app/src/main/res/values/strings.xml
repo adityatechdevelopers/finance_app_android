@@ -63,5 +63,6 @@
     <string name="unverified_account">Unverified \nAccount</string>
     <string name="unverified_account_warning">Unverified Account*</string>
     <string name="not_verified_email_text">We will send a verification link to \nemail, to confirm it\'s your email address</string>
+    <string name="total_amount_text">Please enter total amount you have</string>
 
 </resources>
