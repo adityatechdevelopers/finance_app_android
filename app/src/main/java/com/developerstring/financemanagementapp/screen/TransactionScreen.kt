@@ -65,6 +65,7 @@ class TransactionScreen : AppCompatActivity() {
         database = FirebaseDatabase.getInstance()
             .getReference("user data")
             .child("transaction")
+            .child("all")
             .child(userID.toString())
 
         database.addValueEventListener(object : ValueEventListener {

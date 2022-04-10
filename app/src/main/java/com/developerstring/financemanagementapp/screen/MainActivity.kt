@@ -11,7 +11,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import java.lang.Exception
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,10 +23,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
 
     // monthly limit
-    private var limit = 5600
+    private var limit = 0
 
     // monthly expense
-    private var expense = 3500
+    private var spent = 0
+
+    // monthly limit progressbar
+    private var limitPB = 0
+
+    // monthly expense progressbar
+    private var spentPB = 0
 
     // firebase database reference
     private lateinit var database: DatabaseReference
@@ -34,7 +41,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var currentUser: FirebaseUser
 
     // get userID
-    private var userID : String? = null
+    private var userID: String? = null
+
+    // set the time and date
+    private lateinit var currentMonth: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,16 +53,8 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        // set the limit in progressbar
-        binding.amountProgressbarMainActivity.max = limit
-
         // database reference
         database = FirebaseDatabase.getInstance().getReference("user data")
-
-        // set the expense in the progressbar
-        ObjectAnimator.ofInt(binding.amountProgressbarMainActivity, "progress", expense)
-            .setDuration(2000)
-            .start()
 
         // Firebase Auth Instance
         mAuth = FirebaseAuth.getInstance()
@@ -63,11 +65,20 @@ class MainActivity : AppCompatActivity() {
         // get Current User ID
         userID = mAuth.currentUser?.uid
 
+        // to get the current month
+        currentMonth = SimpleDateFormat("MM-yyyy", Locale.getDefault()).format(Date())
+
         // set profile image
         Glide.with(this).load(currentUser.photoUrl).into(binding.profileImageMainActivity)
 
         // get the amount and display
         getTotalAmount()
+
+        // get the limit and display
+        getLimitData()
+
+        // get the spent and display
+        getSpentData()
 
         // on refreshing the activity
         refreshLayout()
@@ -97,28 +108,82 @@ class MainActivity : AppCompatActivity() {
 
     private fun getTotalAmount() {
 
-        database.child("amount").child(userID.toString()).child("amount").get().addOnSuccessListener {
-            // check the user has amount data if not then send to TotalAmountScreen to set amount
-            if (it.exists()) {
-                // get the amount form database
-                val totalAmount = it.child("amount").value
-                // set the amount to the textView
-                binding.totalAmountMainActivity.text = totalAmount.toString()
-            } else {
-                val totalAmountIntent = Intent(this, TotalAmountScreen::class.java)
-                startActivity(totalAmountIntent)
-                finish()
-            }
-        }.addOnFailureListener {
-            Toast.makeText(this, "Error! While fetching data", Toast.LENGTH_SHORT).show()
+        database.child("amount").child(userID.toString()).child("amount").get()
+            .addOnSuccessListener {
+                // check the user has amount data if not then send to TotalAmountScreen to set amount
+                if (it.exists()) {
+                    // get the amount form database
+                    val totalAmount = it.child("amount").value
+                    // set the amount to the textView
+                    binding.totalAmountMainActivity.text = totalAmount.toString()
+                } else {
+                    val totalAmountIntent = Intent(this, TotalAmountScreen::class.java)
+                    startActivity(totalAmountIntent)
+                    finish()
+                }
+            }.addOnFailureListener {
+            Toast.makeText(this, "Error! While fetching amount", Toast.LENGTH_SHORT).show()
         }
 
+    }
+
+    private fun getLimitData() {
+        database.child("amount").child(userID.toString()).child("limit").get()
+            .addOnSuccessListener {
+                // check the user has amount data if not then send to TotalAmountScreen to set amount
+                if (it.exists()) {
+                    // get the amount form database
+                    limit = it.child("limit").value.toString().toInt()
+                    // set the limit in EditText
+                    binding.expanseLimitMainActivity.text = limit.toString()
+
+                } else {
+                    Toast.makeText(this, "Please set a Monthly Limit", Toast.LENGTH_SHORT).show()
+                }
+            }.addOnFailureListener {
+            Toast.makeText(this, "Error! While fetching limit", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun refreshLayout() {
         binding.refreshMainActivity.setOnRefreshListener {
             getTotalAmount()
+            getLimitData()
+            getSpentData()
+            setLSProgressBar()
             binding.refreshMainActivity.isRefreshing = false
         }
+    }
+
+    private fun getSpentData() {
+        database.child("amount").child(userID.toString()).child("spent").child(currentMonth).get()
+            .addOnSuccessListener {
+                // check the user has amount data if not then send to TotalAmountScreen to set amount
+                if (it.exists()) {
+                    // get the amount form database
+                    spent = it.child("spent").value.toString().toInt()
+                    // set the spent in EditText
+                    binding.spentDoneMainActivity.text = spent.toString()
+
+                    // set the Limit and Spent progressbar
+                    setLSProgressBar()
+                }
+            }.addOnFailureListener {
+                Toast.makeText(this, "Error! While fetching spent data", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun setLSProgressBar() {
+
+        limitPB = limit*10
+        spentPB = spent*10
+
+        // set the limit in progressbar
+        binding.amountProgressbarMainActivity.max = limitPB
+
+        // set the expense in the progressbar
+        ObjectAnimator.ofInt(binding.amountProgressbarMainActivity, "progress", spentPB)
+            .setDuration(2000)
+            .start()
     }
 }

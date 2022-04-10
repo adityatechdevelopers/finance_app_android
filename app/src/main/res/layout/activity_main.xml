@@ -162,8 +162,8 @@
                         android:text="@string/spent"
                         android:textColor="@color/black"
                         android:textSize="16sp"
-                        app:layout_constraintEnd_toEndOf="@+id/expanse_done_main_activity"
-                        app:layout_constraintStart_toStartOf="@+id/expanse_done_main_activity"
+                        app:layout_constraintEnd_toEndOf="@+id/spent_done_main_activity"
+                        app:layout_constraintStart_toStartOf="@+id/spent_done_main_activity"
                         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
                     <!--        limit text-->
@@ -181,13 +181,13 @@
 
                     <!--        expense done int text-->
                     <TextView
-                        android:id="@+id/expanse_done_main_activity"
+                        android:id="@+id/spent_done_main_activity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="25dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="3500"
+                        android:text="@string/zero"
                         android:textColor="@color/black"
                         android:textSize="19sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -200,7 +200,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="30dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:text="5600"
+                        android:text="@string/zero"
                         android:layout_marginTop="25dp"
                         android:textColor="@color/black"
                         android:textSize="19sp"
@@ -219,7 +219,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/expanse_done_main_activity" />
+                        app:layout_constraintTop_toBottomOf="@+id/spent_done_main_activity" />
 
 
 

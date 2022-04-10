@@ -48,13 +48,15 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="30dp"
-            android:hint="@string/old_limit">
+            android:hint="@string/old_limit"
+            android:focusable="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/old_limit_monthly_expenseTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none"/>
+                android:enabled="true"
+                android:focusable="false"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

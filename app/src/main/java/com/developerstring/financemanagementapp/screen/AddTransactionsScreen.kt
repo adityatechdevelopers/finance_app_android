@@ -10,12 +10,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import com.developerstring.financemanagementapp.databinding.ActivityAddTransactionsScreenBinding
 import com.developerstring.financemanagementapp.firebase.addtransaction.AddTransactionData
+import com.developerstring.financemanagementapp.firebase.monthlyExpense.MonthlySpentData
+import com.developerstring.financemanagementapp.firebase.monthlyExpense.NewLimitData
 import com.developerstring.financemanagementapp.firebase.totalamount.TotalAmountData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.properties.Delegates
 
 class AddTransactionsScreen : AppCompatActivity() {
 
@@ -49,6 +52,18 @@ class AddTransactionsScreen : AppCompatActivity() {
     // create a variable for spent on
     private var reason: String? = null
 
+    // set the time and date
+    private lateinit var currentTime: String
+    private lateinit var currentDate: String
+    private lateinit var currentMonth: String
+    private lateinit var databaseKey: String
+
+    // old spent data
+    private var oldSpent = 0
+
+    // new spent data
+    private var newSpent = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // set binding to Activity
@@ -69,6 +84,12 @@ class AddTransactionsScreen : AppCompatActivity() {
         binding.closeImgAddTransactionsScreen.setOnClickListener {
             finish()
         }
+
+        // to get the current time and date
+        currentTime = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
+        currentDate = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+        currentMonth = SimpleDateFormat("MM-yyyy", Locale.getDefault()).format(Date())
+        databaseKey = database.push().key.toString()
 
         // if amount text is null
         binding.amountAddTransactionTextInputEditText.doOnTextChanged { text, start, before, count ->
@@ -132,12 +153,6 @@ class AddTransactionsScreen : AppCompatActivity() {
         // disable error of amount text if its there
         binding.amountAddTransactionTextInputLayout.error = null
 
-        // to get the current time and date
-        val currentTime: String = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
-        val currentDate = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
-        val currentMonth = SimpleDateFormat("MM-yyyy", Locale.getDefault()).format(Date())
-        val databaseKey = database.push().key.toString()
-
         // save the data to the member class
         addTransactionData.amount = amount
         addTransactionData.reason = reason
@@ -159,7 +174,7 @@ class AddTransactionsScreen : AppCompatActivity() {
             }
 
         // upload the data to firebase database
-        database.child("transaction").child(userID.toString()).child(databaseKey)
+        database.child("transaction").child("all").child(userID.toString()).child(databaseKey)
             .setValue(addTransactionData).addOnFailureListener {
                 // on failure
                 binding.progressBarAddTransactions.visibility = View.INVISIBLE
@@ -198,6 +213,10 @@ class AddTransactionsScreen : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
 
+                            if (chipValue == chipSpent) {
+                                getSpentAmount()
+                            }
+
                             // a delay after adding the data
                             Handler().postDelayed({
                                 // invisible the progressbar
@@ -221,6 +240,36 @@ class AddTransactionsScreen : AppCompatActivity() {
                 Toast.makeText(this, "Error! While getting total amount", Toast.LENGTH_SHORT).show()
             }
 
+    }
+
+    private fun getSpentAmount() {
+        database.child("amount").child(userID.toString()).child("spent").child(currentMonth).get()
+            .addOnSuccessListener {
+                // check the user has amount data if not then send to TotalAmountScreen to set amount
+                if (it.exists()) {
+                    // get the amount form database
+                    val spentData = it.child("spent").value.toString().toInt()
+                    // set the old spent data into variable
+                    oldSpent = spentData
+                }
+                // update the spent amount if we got the spent amount successful
+                updateSpentAmount()
+            }.addOnFailureListener {
+                Toast.makeText(this, "Error! While fetching spent data", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun updateSpentAmount() {
+        // set the new spent
+        newSpent = oldSpent + amount!!
+        // store the new spent in the data class
+        val newSpentData = MonthlySpentData(newSpent.toString())
+
+        // set the data in Firebase Database
+        database.child("amount").child(userID.toString()).child("spent").child(currentMonth)
+            .setValue(newSpentData).addOnFailureListener {
+                Toast.makeText(this, "failed to update spent amount", Toast.LENGTH_SHORT).show()
+            }
     }
 
 }
