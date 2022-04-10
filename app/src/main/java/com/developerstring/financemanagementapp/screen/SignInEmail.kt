@@ -20,9 +20,6 @@ class SignInEmail : AppCompatActivity() {
     // firebase Auth
     private lateinit var mAuth: FirebaseAuth
 
-    // firebase User
-    private lateinit var user: FirebaseUser
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // set binding to Activity
@@ -32,9 +29,6 @@ class SignInEmail : AppCompatActivity() {
 
         // get firebase instance
         mAuth = FirebaseAuth.getInstance()
-
-        // get the current user
-        user = mAuth.currentUser!!
 
         // onclick forgot password
         binding.forgotPasswordSignInEmail.setOnClickListener {
