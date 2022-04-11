@@ -44,6 +44,8 @@ class AccountScreen : AppCompatActivity() {
         // onclick logout
         binding.logoutAccountScreen.setOnClickListener {
             mAuth.signOut()
+            val signInScreenIntent = Intent(this@AccountScreen, SignInScreen::class.java)
+            startActivity(signInScreenIntent)
             finish()
         }
     }

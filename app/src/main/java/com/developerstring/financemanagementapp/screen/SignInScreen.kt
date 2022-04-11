@@ -12,6 +12,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import kotlin.system.exitProcess
 
 class SignInScreen : AppCompatActivity() {
 
@@ -103,5 +104,13 @@ class SignInScreen : AppCompatActivity() {
                     Log.w("SignInScreen ", "signInWithCredential:failure", task.exception)
                 }
             }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        // close the app
+        moveTaskToBack(true)
+        android.os.Process.killProcess(android.os.Process.myPid())
+        exitProcess(1)
     }
 }
