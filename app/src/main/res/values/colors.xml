@@ -13,4 +13,5 @@
     <color name="darker">#020A23</color>
     <color name="dark_blue">#14275E</color>
     <color name="dark">#050F2E</color>
+    <color name="medium_blue">#FF00EBFF</color>
 </resources>
