@@ -97,6 +97,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(addTransactionsIntent)
         }
 
+        // onclick financial report
+        binding.financeReportMainActivity.setOnClickListener {
+            // send user to Add Transactions Screen
+            val financialReportIntent = Intent(this@MainActivity, FinancialReportScreen::class.java)
+            startActivity(financialReportIntent)
+        }
+
         // onclick transaction
         binding.viewAllTransactionMainActivity.setOnClickListener {
             // send user to Add Transactions Screen

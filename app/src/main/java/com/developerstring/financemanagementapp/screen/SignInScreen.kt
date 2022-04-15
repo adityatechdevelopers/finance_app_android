@@ -50,13 +50,6 @@ class SignInScreen : AppCompatActivity() {
             signIn()
         }
 
-        // onclick email sign in button
-        binding.signInWithEmailBtnSignInScreen.setOnClickListener {
-            val emailSignInIntent = Intent(this@SignInScreen, SignInEmail::class.java)
-            startActivity(emailSignInIntent)
-            finish()
-        }
-
     }
 
     private fun signIn() {

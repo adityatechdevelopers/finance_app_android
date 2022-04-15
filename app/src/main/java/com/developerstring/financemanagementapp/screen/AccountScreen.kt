@@ -41,6 +41,12 @@ class AccountScreen : AppCompatActivity() {
             startActivity(monthlyExpenseIntent)
         }
 
+        // onclick profile
+        binding.profileAccountAccountScreen.setOnClickListener {
+            val accountProfileScreenIntent = Intent(this@AccountScreen,AccountProfileScreen::class.java)
+            startActivity(accountProfileScreenIntent)
+        }
+
         // onclick logout
         binding.logoutAccountScreen.setOnClickListener {
             mAuth.signOut()

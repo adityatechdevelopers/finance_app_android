@@ -25,6 +25,7 @@
         <entry key="app/src/main/res/drawable/ic_main_activity_design.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_main_screen_background.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_transactions_background.xml" value="0.219" />
+        <entry key="app/src/main/res/drawable/ic_transactions_icon.xml" value="0.199" />
         <entry key="app/src/main/res/drawable/main_activity_button_background.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/next_button_background.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/sign_in_card_view.xml" value="0.1855" />
@@ -35,12 +36,14 @@
         <entry key="app/src/main/res/drawable/sign_in_edit_text_icon.xml" value="0.2145" />
         <entry key="app/src/main/res/drawable/sign_in_edit_text_password_error_icon.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/sign_in_edit_text_password_icon.xml" value="0.2145" />
+        <entry key="app/src/main/res/layout/activity_account_profile_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_account_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_add_transactions.xml" value="0.24094202898550723" />
         <entry key="app/src/main/res/layout/activity_add_transactions_screen.xml" value="0.24094202898550723" />
         <entry key="app/src/main/res/layout/activity_create_account_screen.xml" value="0.22146739130434784" />
+        <entry key="app/src/main/res/layout/activity_financial_report_screen.xml" value="0.22418478260869565" />
         <entry key="app/src/main/res/layout/activity_forgot_password_screen.xml" value="0.264945652173913" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_monthly_expense.xml" value="0.24094202898550723" />
         <entry key="app/src/main/res/layout/activity_monthly_expense_screen.xml" value="0.24094202898550723" />
         <entry key="app/src/main/res/layout/activity_not_verified_email_screen.xml" value="0.22056159420289856" />
@@ -52,6 +55,7 @@
         <entry key="app/src/main/res/layout/activity_total_amount_screen.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_transaction_screen.xml" value="0.26403985507246375" />
         <entry key="app/src/main/res/layout/activity_verify_email_screen.xml" value="0.28708484670057655" />
+        <entry key="app/src/main/res/layout/financial_report_layout.xml" value="0.22418478260869565" />
         <entry key="app/src/main/res/layout/main_transaction_layout.xml" value="0.335" />
       </map>
     </option>

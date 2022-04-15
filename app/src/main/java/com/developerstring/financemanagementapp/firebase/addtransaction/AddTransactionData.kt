@@ -6,5 +6,6 @@ data class AddTransactionData(
     var date: String? = null,
     var time: String? = null,
     var id: String? = null,
-    var cal: String? = null
+    var cal: String? = null,
+    var month: String? = null
 )

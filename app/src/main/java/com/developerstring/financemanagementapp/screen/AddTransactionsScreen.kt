@@ -160,6 +160,7 @@ class AddTransactionsScreen : AppCompatActivity() {
         addTransactionData.time = currentTime
         addTransactionData.id = databaseKey
         addTransactionData.cal = chipValue
+        addTransactionData.month = currentMonth
 
         // upload the data to firebase database with month
         database.child("transaction").child("term").child(userID.toString()).child(currentMonth)
@@ -263,7 +264,7 @@ class AddTransactionsScreen : AppCompatActivity() {
         // set the new spent
         newSpent = oldSpent + amount!!
         // store the new spent in the data class
-        val newSpentData = MonthlySpentData(newSpent.toString())
+        val newSpentData = MonthlySpentData(newSpent.toString(),currentMonth)
 
         // set the data in Firebase Database
         database.child("amount").child(userID.toString()).child("spent").child(currentMonth)
