@@ -51,7 +51,8 @@ class AccountScreen : AppCompatActivity() {
         // onclick logout
         binding.logoutAccountScreen.setOnClickListener {
 
-            val builder = AlertDialog.Builder(this)
+            // show a alert dialog
+            val builder = AlertDialog.Builder(this@AccountScreen)
             builder.setTitle("Confirm Logout")
             builder.setMessage("Are you sure you want to logout")
             builder.setPositiveButton("Logout") { dialog, which ->
@@ -63,6 +64,7 @@ class AccountScreen : AppCompatActivity() {
             builder.setNegativeButton("Cancel") { dialog, which ->
 
             }
+            builder.show()
         }
     }
 }
