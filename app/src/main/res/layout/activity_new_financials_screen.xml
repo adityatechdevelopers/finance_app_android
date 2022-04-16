@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:viewBindingIgnore="false"
-    tools:context=".screen.SetFinancialsScreen">
+    tools:context=".screen.NewFinancialsScreen">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -17,23 +16,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!--    close image-->
-        <ImageView
-            android:id="@+id/close_img_monthly_expense_screen"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="end"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/ic_close_icon_black" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="45dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/set_financials_text"
             android:textColor="@color/black"
@@ -41,19 +28,19 @@
 
         <!--    new limit-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/total_amount_TextInputLayout"
+            android:id="@+id/new_total_amount_TextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            app:errorEnabled="true"
-            app:errorIconDrawable="@drawable/ic_error_icon"
             android:layout_marginStart="30dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="30dp"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error_icon"
             android:hint="@string/total_amount">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/total_amount_TextInputEditText"
+                android:id="@+id/new_total_amount_TextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"/>
@@ -61,31 +48,30 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/amount_text_set_financials"
+            android:id="@+id/amount_text_new_financials"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/please_enter_amount_text"
-            android:textColor="@color/red"
+            android:textColor="@color/black"
             android:textSize="11sp"
-            android:visibility="invisible"
             android:layout_marginStart="32dp"
             android:layout_marginTop="4dp"/>
 
         <!--    new limit-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/monthly_limit_TextInputLayout"
+            android:id="@+id/new_monthly_limit_TextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            app:errorEnabled="true"
-            app:errorIconDrawable="@drawable/ic_error_icon"
             android:layout_marginStart="30dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="30dp"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error_icon"
             android:hint="@string/monthly_limit">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/monthly_limit_TextInputEditText"
+                android:id="@+id/new_monthly_limit_TextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"/>
@@ -93,13 +79,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/limit_text_set_financials"
+            android:id="@+id/limit_text_new_financials"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/please_enter_limit_text"
-            android:textColor="@color/red"
+            android:textColor="@color/black"
             android:textSize="11sp"
-            android:visibility="invisible"
             android:layout_marginStart="32dp"
             android:layout_marginTop="4dp"/>
 
@@ -118,7 +103,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:id="@+id/save_set_financials"
+            android:id="@+id/save_new_financials"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -138,6 +123,5 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

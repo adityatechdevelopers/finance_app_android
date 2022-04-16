@@ -129,8 +129,8 @@ class MainActivity : AppCompatActivity() {
                     // set the amount to the textView
                     binding.totalAmountMainActivity.text = totalAmount.toString()
                 } else {
-                    val totalAmountIntent = Intent(this, TotalAmountScreen::class.java)
-                    startActivity(totalAmountIntent)
+                    val newFinancialsIntent = Intent(this, NewFinancialsScreen::class.java)
+                    startActivity(newFinancialsIntent)
                     finish()
                 }
             }.addOnFailureListener {

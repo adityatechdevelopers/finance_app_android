@@ -20,6 +20,7 @@
     <string name="month_col">Month :</string>
     <string name="monthly_expense">Monthly Expense</string>
     <string name="monthly_limit">Monthly Limit</string>
+    <string name="monthly_limit_col">Monthly Limit :</string>
     <string name="total_balance">Total Balance You Have</string>
     <string name="old_limit">Old Limit</string>
     <string name="new_limit">New Limit</string>
@@ -69,7 +70,10 @@
     <string name="not_verified_email_text">We will send a verification link to \nemail, to confirm it\'s your email address</string>
     <string name="total_amount_text">Please enter total amount you have</string>
     <string name="total_amount">Total Amount</string>
+    <string name="total_amount_col">Total Amount :</string>
     <string name="save">Save</string>
     <string name="set_financials">Set Financials</string>
+    <string name="please_enter_amount_text">Please enter total amount you have*</string>
+    <string name="please_enter_limit_text">Please enter monthly spent limit*</string>
 
 </resources>
