@@ -1,5 +1,7 @@
 package com.developerstring.financemanagementapp.firebase.totalamount
 
-data class TotalAmountData(
+import androidx.annotation.Keep
+
+@Keep data class TotalAmountData(
     var amount: String? = null
 )

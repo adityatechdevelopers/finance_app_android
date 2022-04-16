@@ -1,9 +1,11 @@
 package com.developerstring.financemanagementapp.firebase.monthlyExpense
 
-data class NewLimitData(val limit: String? = null){
+import androidx.annotation.Keep
+
+@Keep data class NewLimitData(val limit: String? = null){
 
 }
 
-data class NewTotalAmountData(val amount: String? = null){
+@Keep data class NewTotalAmountData(val amount: String? = null){
 
 }
