@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinanceManagementApp">
         <activity
+            android:name=".screen.MonthFinancialReportScreen"
+            android:exported="false" />
+        <activity
             android:name=".screen.FinancialReportScreen"
             android:exported="false" />
         <activity
@@ -42,7 +45,7 @@
             android:name=".screen.AddTransactionsScreen"
             android:exported="false" />
         <activity
-            android:name=".screen.MonthlyExpenseScreen"
+            android:name=".screen.SetFinancialsScreen"
             android:exported="false" />
         <activity
             android:name=".screen.AccountScreen"

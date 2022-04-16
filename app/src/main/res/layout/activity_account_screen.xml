@@ -110,7 +110,7 @@
 
             <!--            monthly limit-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/monthly_expense_account_screen"
+                android:id="@+id/set_financials_account_screen"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:clickable="true"
@@ -124,7 +124,7 @@
                     android:gravity="center"
                     android:paddingStart="20dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/monthly_limit"
+                    android:text="@string/set_financials"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"

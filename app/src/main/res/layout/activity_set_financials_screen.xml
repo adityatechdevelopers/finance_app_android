@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:viewBindingIgnore="false"
-    tools:context=".screen.MonthlyExpenseScreen">
+    tools:context=".screen.SetFinancialsScreen">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -35,44 +35,42 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="@string/set_limit"
+            android:text="@string/set_financials_text"
             android:textColor="@color/black"
             android:textSize="21sp" />
 
-        <!--    old limit-->
+        <!--    new limit-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/old_limit_monthly_expense_TextInputLayout"
+            android:id="@+id/new_total_amount_TextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="30dp"
-            android:hint="@string/old_limit"
-            android:focusable="false">
+            android:hint="@string/total_amount">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/old_limit_monthly_expenseTextInputEditText"
+                android:id="@+id/new_total_amount_TextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="true"
-                android:focusable="false"/>
+                android:inputType="number"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout><!--    old limit-->
 
         <!--    new limit-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/new_limit_monthly_expense_TextInputLayout"
+            android:id="@+id/new_monthly_limit_TextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="30dp"
-            android:hint="@string/new_limit">
+            android:hint="@string/monthly_limit">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/new_limit_monthly_expenseTextInputEditText"
+                android:id="@+id/new_monthly_limit_TextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"/>
@@ -94,7 +92,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:id="@+id/change_limit_monthly_expense"
+            android:id="@+id/save_set_financials"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -105,7 +103,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/change_limit"
+                android:text="@string/save"
                 android:textSize="20sp"
                 android:fontFamily="@font/poppins_semibold"
                 android:textColor="@color/white"

@@ -23,9 +23,10 @@
     <string name="total_balance">Total Balance You Have</string>
     <string name="old_limit">Old Limit</string>
     <string name="new_limit">New Limit</string>
-    <string name="set_limit">Set your Monthly Limits</string>
+    <string name="set_financials_text">Set your Financials</string>
     <string name="change_limit">Change Limit</string>
     <string name="spent">Spent</string>
+    <string name="spent_col">Spent :</string>
     <string name="limit">Limit</string>
     <string name="add_transaction">Add Transaction</string>
     <string name="finance_report">Finance Report</string>
@@ -67,5 +68,8 @@
     <string name="unverified_account_warning">Unverified Account*</string>
     <string name="not_verified_email_text">We will send a verification link to \nemail, to confirm it\'s your email address</string>
     <string name="total_amount_text">Please enter total amount you have</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="save">Save</string>
+    <string name="set_financials">Set Financials</string>
 
 </resources>

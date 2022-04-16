@@ -3,6 +3,7 @@ package com.developerstring.financemanagementapp.screen
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.developerstring.financemanagementapp.databinding.ActivityAccountScreenBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -36,8 +37,8 @@ class AccountScreen : AppCompatActivity() {
         }
 
         // onclick monthly expense
-        binding.monthlyExpenseAccountScreen.setOnClickListener {
-            val monthlyExpenseIntent = Intent(this@AccountScreen,MonthlyExpenseScreen::class.java)
+        binding.setFinancialsAccountScreen.setOnClickListener {
+            val monthlyExpenseIntent = Intent(this@AccountScreen,SetFinancialsScreen::class.java)
             startActivity(monthlyExpenseIntent)
         }
 
@@ -49,10 +50,19 @@ class AccountScreen : AppCompatActivity() {
 
         // onclick logout
         binding.logoutAccountScreen.setOnClickListener {
-            mAuth.signOut()
-            val signInScreenIntent = Intent(this@AccountScreen, SignInScreen::class.java)
-            startActivity(signInScreenIntent)
-            finish()
+
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Confirm Logout")
+            builder.setMessage("Are you sure you want to logout")
+            builder.setPositiveButton("Logout") { dialog, which ->
+                mAuth.signOut()
+                val signInScreenIntent = Intent(this@AccountScreen, SignInScreen::class.java)
+                startActivity(signInScreenIntent)
+                finish()
+            }
+            builder.setNegativeButton("Cancel") { dialog, which ->
+
+            }
         }
     }
 }

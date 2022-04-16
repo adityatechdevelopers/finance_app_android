@@ -74,12 +74,6 @@ class MainActivity : AppCompatActivity() {
         // get the amount and display
         getTotalAmount()
 
-        // get the limit and display
-        getLimitData()
-
-        // get the spent and display
-        getSpentData()
-
         // on refreshing the activity
         refreshLayout()
 
@@ -88,6 +82,13 @@ class MainActivity : AppCompatActivity() {
             // send user to Account Screen
             val profileScreenIntent = Intent(this@MainActivity, AccountScreen::class.java)
             startActivity(profileScreenIntent)
+        }
+
+        // onclick profile image
+        binding.editFinancialsImgMainActivity.setOnClickListener {
+            // send user to Account Screen
+            val editFinancialsIntent = Intent(this@MainActivity, SetFinancialsScreen::class.java)
+            startActivity(editFinancialsIntent)
         }
 
         // onclick add transactions
@@ -121,6 +122,10 @@ class MainActivity : AppCompatActivity() {
                 if (it.exists()) {
                     // get the amount form database
                     val totalAmount = it.child("amount").value
+                    // get the limit and display
+                    getLimitData()
+                    // get the spent and display
+                    getSpentData()
                     // set the amount to the textView
                     binding.totalAmountMainActivity.text = totalAmount.toString()
                 } else {

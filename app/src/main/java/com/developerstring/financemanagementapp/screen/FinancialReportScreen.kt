@@ -5,13 +5,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.developerstring.financemanagementapp.R
 import com.developerstring.financemanagementapp.adapter.financialreport.FinancialReportAdapter
-import com.developerstring.financemanagementapp.adapter.transaction.TransactionAdapter
 import com.developerstring.financemanagementapp.databinding.ActivityFinancialReportScreenBinding
-import com.developerstring.financemanagementapp.databinding.ActivityTransactionScreenBinding
 import com.developerstring.financemanagementapp.firebase.financialreport.FinancialReportData
-import com.developerstring.financemanagementapp.firebase.transactions.TransactionsData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -60,10 +56,10 @@ class FinancialReportScreen : AppCompatActivity() {
         financialReportArrayList = arrayListOf<FinancialReportData>()
 
         // get the data from firebase database
-        getTransactionData()
+        getFinancialReportData()
     }
 
-    private fun getTransactionData() {
+    private fun getFinancialReportData() {
 
         // firebase Database Instance and reference(main path)
         database = FirebaseDatabase.getInstance()
@@ -80,7 +76,7 @@ class FinancialReportScreen : AppCompatActivity() {
                         val reportData = userSnapshot.getValue(FinancialReportData::class.java)
                         financialReportArrayList.add(reportData!!)
                     }
-                    binding.recyclerViewFinancialReportMain.adapter = FinancialReportAdapter(financialReportArrayList)
+                    binding.recyclerViewFinancialReportMain.adapter = FinancialReportAdapter(this@FinancialReportScreen,financialReportArrayList)
                 }
 
             }

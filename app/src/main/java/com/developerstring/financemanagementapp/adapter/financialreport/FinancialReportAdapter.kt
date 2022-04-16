@@ -1,5 +1,7 @@
 package com.developerstring.financemanagementapp.adapter.financialreport
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,8 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.developerstring.financemanagementapp.R
 import com.developerstring.financemanagementapp.firebase.financialreport.FinancialReportData
+import com.developerstring.financemanagementapp.screen.MainActivity
+import com.developerstring.financemanagementapp.screen.MonthFinancialReportScreen
+import com.google.firebase.database.ValueEventListener
 
 class FinancialReportAdapter(
+    var context: Context,
     private val financialReportList: ArrayList<FinancialReportData>
 ) : RecyclerView.Adapter<FinancialReportAdapter.FinancialReportViewHolder>() {
 
@@ -22,6 +28,18 @@ class FinancialReportAdapter(
 
         holder.amount.text = currentItem.spent
         holder.month.text = currentItem.month
+
+        // onclick the card of recyclerView
+        holder.itemView.setOnClickListener {
+            val month = currentItem.month
+            val spent = currentItem.spent
+
+            // send user to MonthFinancialReport with above data
+            val intent = Intent(context,MonthFinancialReportScreen::class.java)
+            intent.putExtra("month",month)
+            intent.putExtra("spent",spent)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

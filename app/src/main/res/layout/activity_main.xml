@@ -93,6 +93,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
+                            android:id="@+id/edit_financials_img_main_activity"
                             android:layout_width="23dp"
                             android:layout_height="23dp"
                             android:layout_marginStart="40dp"
